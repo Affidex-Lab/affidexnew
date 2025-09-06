@@ -41,7 +41,7 @@ export default function Products() {
   return (
     <div className="bg-black text-white">
       <div className="container text-center py-16">
-        <h1 className="text-4xl md:text-6xl font-bold">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Products</span></h1>
+        <h1 className="text-4xl md:text-6xl font-bold">Our <span className="text-white">Products</span></h1>
         <p className="mt-4 text-gray-300 max-w-3xl mx-auto">Discover our innovative MVP products and explore the cutting-edge solutions we've built for the future of blockchain and AI.</p>
       </div>
 
@@ -56,19 +56,19 @@ export default function Products() {
               </div>
               <div className="mb-6">
                 <div className="text-2xl font-bold">{p.title}</div>
-                <div className="text-[#8b5cf6] font-medium">{p.category}</div>
+                <div className="text-gray-300 font-medium">{p.category}</div>
                 <p className="mt-3 text-gray-300">{p.description}</p>
               </div>
               <div>
                 <div className="font-semibold mb-2">Key Features:</div>
                 {p.features.map((f, j) => (
                   <div key={j} className="flex items-center gap-2 text-sm text-gray-300">
-                    <div className="h-2 w-2 rounded-full bg-[#8b5cf6]" />
+                    <div className="h-2 w-2 rounded-full bg-gray-600" />
                     <span>{f}</span>
                   </div>
                 ))}
               </div>
-              <button className="mt-6 w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-semibold">Learn More</button>
+              <button className="mt-6 w-full rounded-lg bg-gray-700 px-6 py-3 font-semibold">Learn More</button>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function Products() {
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {past.map((x, i) => (
             <div key={i} className="rounded-xl border border-gray-800 bg-gray-900 p-6">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-lg bg-gray-800 p-2 text-[#8b5cf6]">{x.icon}<span className="font-semibold">{x.title}</span></div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-lg bg-gray-800 p-2 text-gray-300">{x.icon}<span className="font-semibold">{x.title}</span></div>
               <p className="text-gray-400 text-sm">{x.description}</p>
             </div>
           ))}
@@ -87,12 +87,12 @@ export default function Products() {
       </div>
 
       <div className="container pb-24 text-center">
-        <Rocket className="mx-auto mb-4 h-10 w-10 text-[#8b5cf6]" />
+        <Rocket className="mx-auto mb-4 h-10 w-10 text-gray-300" />
         <h3 className="text-3xl font-bold mb-2">Ready to Build the Future?</h3>
         <p className="text-gray-300 max-w-2xl mx-auto mb-6">Join us in our mission to create innovative solutions that push the boundaries of blockchain and AI technology.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" className="rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-3 font-semibold">Get In Touch</a>
-          <a href="/about" className="rounded-lg border border-purple-600 px-8 py-3 font-semibold text-purple-400 hover:bg-purple-600 hover:text-white">Learn About Us</a>
+          <a href="/contact" className="rounded-lg bg-gray-700 px-8 py-3 font-semibold">Get In Touch</a>
+          <a href="/about" className="rounded-lg border border-gray-600 px-8 py-3 font-semibold text-gray-300 hover:bg-gray-700 hover:text-white">Learn About Us</a>
         </div>
       </div>
     </div>
