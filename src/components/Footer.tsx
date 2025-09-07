@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t bg-slate-50">
       <div className="container flex flex-col items-center justify-between gap-4 py-8 text-center md:flex-row md:text-left">
-        <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} AFFIDEX LAB • Brand color: #0A2540</div>
+        <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} AFFIDEX LAB</div>
         <div className="flex items-center gap-6 text-sm">
           {footerLinks.map((n) => (
             <Link key={n.to} to={n.to} className="text-muted-foreground hover:text-foreground">
