@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <main className="max-w-screen mx-auto xl:px-0 lg:px-2 md:px-2 px-1 py-6 bg-black text-white">
+    <main className="max-w-screen mx-auto xl:px-0 lg:px-2 md:px-2 px-1 py-6 bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <section className="xl:px-20 lg:px-2 px-2 py-10 xl:text-justify lg:text-justify text-start">
         <h1 className="text-3xl font-semibold mb-6">Privacy Policy</h1>
         <p className="mb-4">At Affidex Lab, we value your privacy and are committed to protecting the personal data you share with us. This Privacy Policy outlines how we collect, use, store, and protect your data when you access and use our platform. By using our services, you agree to the collection and use of information as described in this policy.</p>
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
         <p className="mb-4">Affidex Lab is not intended for children under the age of 13, and we do not knowingly collect information from children.</p>
         <h2 className="text-2xl font-medium mt-6 mb-2">8. Changes to This Privacy Policy</h2>
         <p className="mb-4">We may update this Privacy Policy from time to time. Any changes will be posted on this page.</p>
-        <p>If you have any questions or concerns, please contact us at <strong>hello@affidexlab.com</strong>.</p>
+        <p>If you have any questions or concerns, please contact us at <strong>{import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL}</strong>.</p>
       </section>
     </main>
   );

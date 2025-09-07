@@ -1,6 +1,6 @@
 export default function Terms() {
   return (
-    <main className="max-w-screen mx-auto xl:px-0 lg:px-2 md:px-2 px-1 py-6 bg-black text-white">
+    <main className="max-w-screen mx-auto xl:px-0 lg:px-2 md:px-2 px-1 py-6 bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <section className="xl:px-20 lg:px-2 px-2 py-10 xl:text-justify lg:text-justify text-start">
         <h1 className="text-3xl font-semibold mb-6">Terms and Conditions</h1>
         <p className="mb-4">By accessing or using Affidex Lab, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our platform or services.</p>
@@ -36,7 +36,7 @@ export default function Terms() {
         <h2 className="text-2xl font-medium mt-6 mb-2">13. Changes to the Terms</h2>
         <p className="mb-4">We may update these Terms and Conditions from time to time. The updated version will be posted on this page.</p>
         <h2 className="text-2xl font-medium mt-6 mb-2">14. Contact Us</h2>
-        <p>If you have questions, please contact us at <strong>hello@affidexlab.com</strong>.</p>
+        <p>If you have questions, please contact us at <strong>{import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL}</strong>.</p>
       </section>
     </main>
   );
