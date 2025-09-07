@@ -109,7 +109,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <Link to="/services" className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow">
+            <Link to="/services" className="inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow">
               Explore services
               <ArrowRight size={16} />
             </Link>

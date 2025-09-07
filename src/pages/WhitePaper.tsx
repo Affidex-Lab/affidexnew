@@ -2,12 +2,12 @@ import { FileText, Download, Lightbulb, Rocket, Cog, Shield, ChartLine, Users } 
 
 export default function WhitePaper() {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container text-center py-16">
         <FileText className="mx-auto h-12 w-12 text-[#8b5cf6] mb-4" />
-        <h1 className="text-4xl md:text-6xl font-bold">Affidex Lab <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">White Paper</span></h1>
+        <h1 className="text-4xl md:text-6xl font-bold">Affidex Lab White Paper</h1>
         <p className="mt-4 text-gray-300 max-w-3xl mx-auto">A comprehensive overview of our incubation laboratory, mission, technology, and vision for the future of blockchain and AI solutions.</p>
-        <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-3 font-semibold">
+        <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#8b5cf6] px-8 py-3 font-semibold">
           <Download size={16}/> Download PDF
         </button>
       </div>

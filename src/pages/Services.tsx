@@ -18,9 +18,9 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container text-center py-16">
-        <h1 className="text-4xl md:text-6xl font-bold">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Services</span></h1>
+        <h1 className="text-4xl md:text-6xl font-bold">Our Services</h1>
         <p className="mt-4 text-gray-300 max-w-3xl mx-auto">We offer comprehensive development services to help you build the next generation of blockchain and AI‑powered solutions.</p>
       </div>
 
@@ -44,7 +44,7 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {steps.map((st, i) => (
             <div key={i} className="rounded-xl border border-gray-800 bg-gray-900 p-6 text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 font-bold">{st.num}</div>
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gray-700 font-bold">{st.num}</div>
               <div className="font-semibold mb-2">{st.title}</div>
               <p className="text-gray-400 text-sm">{st.desc}</p>
             </div>

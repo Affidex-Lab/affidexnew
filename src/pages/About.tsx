@@ -16,7 +16,7 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container py-16">
         <h1 className="text-center text-4xl md:text-6xl font-bold">About <span className="text-white">Affidex Lab</span></h1>
         <p className="mt-6 text-center text-gray-300 max-w-3xl mx-auto">
