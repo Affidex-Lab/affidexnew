@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 
 function encode(data: Record<string, string>) {
@@ -98,7 +99,7 @@ export default function Contact() {
                 <Mail className="mt-1 text-slate-500" size={18} />
                 <div>
                   <div className="text-sm font-medium">Email</div>
-                  <a href="mailto:contact@affidexlab.com" className="text-sm text-slate-600 hover:underline">contact@affidexlab.com</a>
+                  <a href={`mailto:${import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL}`} className="text-sm text-slate-600 hover:underline">{import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL}</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -109,8 +110,8 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4 pt-2">
-                <a href="https://linkedin.com/company/affidexlab" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-50"><Linkedin size={16}/>LinkedIn</a>
-                <a href="https://x.com/affidexlab" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-50"><Twitter size={16}/>X</a>
+                <a href="https://linkedin.com/company/affidexlab" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-50"><FaLinkedin size={16}/>LinkedIn</a>
+                <a href="https://x.com/affidexlab" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-50"><FaXTwitter size={16}/>X</a>
               </div>
             </div>
           </div>

@@ -1,15 +1,12 @@
 import { FileText, Download, Lightbulb, Rocket, Cog, Shield, ChartLine, Users } from "lucide-react";
 
-export default function WhitePaper() {
+export default function Roadmap() {
   return (
     <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container text-center py-16">
         <FileText className="mx-auto h-12 w-12 text-[#8b5cf6] mb-4" />
-        <h1 className="text-4xl md:text-6xl font-bold">Affidex Lab White Paper</h1>
+        <h1 className="text-4xl md:text-6xl font-bold">Affidex Lab Roadmap</h1>
         <p className="mt-4 text-gray-300 max-w-3xl mx-auto">A comprehensive overview of our incubation laboratory, mission, technology, and vision for the future of blockchain and AI solutions.</p>
-        <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#8b5cf6] px-8 py-3 font-semibold">
-          <Download size={16}/> Download PDF
-        </button>
       </div>
 
       <div className="container grid lg:grid-cols-4 gap-8 pb-20">
@@ -30,7 +27,7 @@ export default function WhitePaper() {
             <div className="flex items-center gap-2 mb-4"><Lightbulb className="text-[#8b5cf6]"/><h2 className="text-2xl font-bold">Introduction</h2></div>
             <p className="text-gray-300 mb-4">Affidex Lab represents the evolution of CreedTech Group into a specialized incubation laboratory focused on developing core utility projects in the blockchain and artificial intelligence domains. Our transformation reflects a strategic pivot towards building foundational technologies that will shape the future of decentralized systems and intelligent applications.</p>
             <p className="text-gray-300 mb-4">As an incubation laboratory, we operate at the intersection of innovation and practicality, taking promising concepts from ideation through MVP development and market validation. Our approach combines rigorous technical development with user‑centered design principles to create solutions that are both cutting‑edge and accessible.</p>
-            <p className="text-gray-300">This white paper outlines our comprehensive approach to innovation, detailing our technological capabilities, product portfolio, and strategic vision for contributing to the next generation of digital infrastructure.</p>
+            <p className="text-gray-300">This roadmap outlines our comprehensive approach to innovation, detailing our technological capabilities, product portfolio, and strategic vision for contributing to the next generation of digital infrastructure.</p>
           </section>
 
           <section id="mission" className="rounded-xl border border-gray-800 bg-gray-900 p-8">

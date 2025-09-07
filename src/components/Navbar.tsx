@@ -6,7 +6,7 @@ export default function Navbar() {
   const nav = [
     { to: "/products", label: "Products" },
     { to: "/services", label: "Services" },
-    { to: "/white-paper", label: "White Paper" },
+    { to: "/roadmap", label: "Roadmap" },
     { to: "/about", label: "About" },
   ];
   const { pathname } = useLocation();

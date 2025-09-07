@@ -3,33 +3,48 @@ import { Shield, Gamepad2, Lock, Fingerprint, Palette, Rocket } from "lucide-rea
 export default function Products() {
   const products = [
     {
-      title: "Cipher Wallet",
-      category: "Blockchain Security",
+      title: "CREDIFY",
+      category: "Identity-Verified E-commerce",
       description:
-        "A revolutionary crypto wallet that eliminates seed phrases using Shamir's Secret Sharing, featuring biometric recovery and duress auto-lock for maximum security.",
+        "Identity-first marketplace with zero-knowledge verification and USDT smart‑contract escrow on Avalanche C‑Chain, delivering cryptographic trust and privacy‑preserving compliance.",
       icon: <Shield className="w-6 h-6" />,
       features: [
-        "No seed phrases required",
-        "Shamir's Secret Sharing",
-        "Biometric recovery system",
-        "Duress auto-lock protection",
+        "Zero-knowledge identity verification",
+        "USDT smart-contract escrow on Avalanche C-Chain",
+        "Portable on-chain reputation",
+        "Privacy-preserving compliance & dispute resolution"
       ],
-      status: "MVP",
+      status: "Live",
+      link: "https://credifymarket.xyz"
     },
-    {
-      title: "Gamify",
-      category: "AI Platform",
-      description:
-        "An AI-powered platform that enables anyone to create engaging games through natural language prompts, democratizing game development for creators worldwide.",
-      icon: <Gamepad2 className="w-6 h-6" />,
-      features: [
-        "Natural language game creation",
-        "AI-powered development tools",
-        "No coding required",
-        "Rapid prototyping",
-      ],
-      status: "MVP",
-    },
+    // {
+    //   title: "Cipher Wallet",
+    //   category: "Blockchain Security",
+    //   description:
+    //     "A revolutionary crypto wallet that eliminates seed phrases using Shamir's Secret Sharing, featuring biometric recovery and duress auto-lock for maximum security.",
+    //   icon: <Shield className="w-6 h-6" />,
+    //   features: [
+    //     "No seed phrases required",
+    //     "Shamir's Secret Sharing",
+    //     "Biometric recovery system",
+    //     "Duress auto-lock protection",
+    //   ],
+    //   status: "MVP",
+    // },
+    // {
+    //   title: "Gamify",
+    //   category: "AI Platform",
+    //   description:
+    //     "An AI-powered platform that enables anyone to create engaging games through natural language prompts, democratizing game development for creators worldwide.",
+    //   icon: <Gamepad2 className="w-6 h-6" />,
+    //   features: [
+    //     "Natural language game creation",
+    //     "AI-powered development tools",
+    //     "No coding required",
+    //     "Rapid prototyping",
+    //   ],
+    //   status: "MVP",
+    // },
   ];
 
   const past = [
@@ -68,7 +83,9 @@ export default function Products() {
                   </div>
                 ))}
               </div>
-              <button className="mt-6 w-full rounded-lg bg-gray-700 px-6 py-3 font-semibold">Learn More</button>
+              <div className="mt-6 w-full rounded-lg bg-gray-700 px-6 py-3 font-semibold flex justify-center">
+                <a href={p.link} className="block">Visit</a>
+              </div>
             </div>
           ))}
         </div>

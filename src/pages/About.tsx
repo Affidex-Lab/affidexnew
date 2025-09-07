@@ -9,10 +9,10 @@ export default function About() {
   ];
 
   const milestones = [
-    { year: "2020", title: "CreedTech Group Founded", description: "Started as a technology consultancy focusing on Web2 development and digital transformation." },
-    { year: "2022", title: "Blockchain Expansion", description: "Expanded into Web3 and blockchain development, building solutions for the decentralized ecosystem." },
-    { year: "2023", title: "AI Integration", description: "Integrated artificial intelligence capabilities to enhance our development offerings and create smarter solutions." },
-    { year: "2024", title: "Affidex Lab Evolution", description: "Transformed into Affidex Lab, an incubation laboratory focused on core utility projects and MVP development." },
+    { year: "2023", title: "CreedTech Group Founded", description: "Started as a technology consultancy focusing on Web2 development and digital transformation." },
+    { year: "2024", title: "Blockchain Expansion", description: "Expanded into Web3 and blockchain development, building solutions for the decentralized ecosystem." },
+    // { year: "2023", title: "AI Integration", description: "Integrated artificial intelligence capabilities to enhance our development offerings and create smarter solutions." },
+    { year: "2025", title: "Affidex Lab Evolution", description: "Transformed into Affidex Lab, an incubation laboratory focused on core utility projects and MVP development." },
   ];
 
   return (

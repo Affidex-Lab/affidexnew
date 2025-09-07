@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
-import WhitePaper from "./pages/WhitePaper";
+import Roadmap from "./pages/Roadmap";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/white-paper" element={<WhitePaper />} />
+          <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
