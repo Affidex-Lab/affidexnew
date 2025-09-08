@@ -17,9 +17,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-extrabold tracking-tight">
-          <span className="text-xl">AFFIDEX</span>
-          <span className="rounded-full bg-[#0A2540] px-2 py-0.5 text-xs font-bold text-white">LAB</span>
+        <Link to="/" className="flex w-48 sm:w-60 items-center font-extrabold tracking-tight">
+          <img src="/logo.png" alt="Affidex Lab" />
         </Link>
 
         {/* Desktop Navigation */}
