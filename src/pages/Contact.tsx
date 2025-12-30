@@ -58,8 +58,8 @@ export default function Contact() {
     <div className="border-t bg-white py-20">
       <div className="container">
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <h1 className="text-3xl font-bold md:text-4xl">Get in touch</h1>
-          <p className="mt-4 text-muted-foreground">Tell us about your project or research. We’ll follow up to schedule a short conversation.</p>
+          <h1 className="text-3xl font-bold md:text-4xl">Let's talk business</h1>
+          <p className="mt-4 text-muted-foreground">Tell me about your project and what you need help with. After submitting, you'll receive my calendar link to book a consultancy session.</p>
         </div>
 
         <div className="grid items-start gap-8 md:grid-cols-2">
@@ -69,7 +69,7 @@ export default function Contact() {
           >
             <p className="hidden">
               <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
+                Don't fill this out if you're human: <input name="bot-field" />
               </label>
             </p>
             <div className="grid gap-4">
@@ -83,12 +83,27 @@ export default function Contact() {
               </div>
               <div className="grid gap-2">
                 <label className="text-sm font-medium" htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows={5} required className="resize-none rounded-lg border px-3 py-2 outline-none transition focus:border-[#0A2540]" placeholder="What are you building?" />
+                <textarea id="message" name="message" rows={5} required className="resize-none rounded-lg border px-3 py-2 outline-none transition focus:border-[#0A2540]" placeholder="What are you building? What challenges are you facing?" />
               </div>
               <button type="submit" disabled={status === "submitting"} className="inline-flex items-center justify-center rounded-lg bg-[#0A2540] px-5 py-3 font-semibold text-white transition hover:opacity-95 disabled:opacity-60">
                 {status === "submitting" ? "Sending..." : "Send message"}
               </button>
-              {status === "success" && (<p className="text-sm text-emerald-600">Thanks! Your message was sent.</p>)}
+              {status === "success" && (
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 space-y-3">
+                  <p className="text-sm font-semibold text-emerald-900">✓ Message received!</p>
+                  <p className="text-sm text-emerald-700">Thanks for reaching out. Here's the next step:</p>
+                  <a 
+                    href="https://calendly.com/dbossdefi/30min" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                  >
+                    Book a consultancy session
+                    <ArrowRight size={16} />
+                  </a>
+                  <p className="text-xs text-emerald-600">I'll review your message before our call.</p>
+                </div>
+              )}
               {status === "error" && (<p className="text-sm text-red-600">Failed to send via EmailJS. Opening your email client...</p>)}
             </div>
           </form>
