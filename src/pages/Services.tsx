@@ -2,26 +2,26 @@ import { Rocket, Shield, BrainCircuit, Code2, Smartphone, Cloud, Users, Lightbul
 
 export default function Services() {
   const services = [
-    { icon: <Rocket className="w-6 h-6" />, title: "MVP Development", description: "Rapidly prototype and launch minimum viable products that solve real problems. We focus on bringing innovative ideas to market quickly and efficiently.", gradient: "from-blue-500 to-purple-600" },
-    { icon: <Shield className="w-6 h-6" />, title: "Blockchain Development", description: "Build secure, scalable blockchain solutions including smart contracts, DeFi protocols, and Web3 applications with privacy-first architecture.", gradient: "from-green-500 to-blue-600" },
-    { icon: <BrainCircuit className="w-6 h-6" />, title: "AI Integration", description: "Leverage artificial intelligence to create intuitive, powerful tools. From natural language processing to machine learning models.", gradient: "from-purple-500 to-pink-600" },
-    { icon: <Code2 className="w-6 h-6" />, title: "Custom Software", description: "End-to-end software development services for Web2 and Web3 applications, tailored to your specific business needs.", gradient: "from-orange-500 to-red-600" },
-    { icon: <Smartphone className="w-6 h-6" />, title: "Mobile Apps", description: "Cross‑platform mobile applications that provide seamless user experiences across iOS and Android devices.", gradient: "from-teal-500 to-green-600" },
-    { icon: <Cloud className="w-6 h-6" />, title: "Cloud Infrastructure", description: "Design and implement scalable cloud infrastructure solutions with focus on security, performance, and cost optimization.", gradient: "from-indigo-500 to-purple-600" },
+    { icon: <Rocket className="w-6 h-6" />, title: "Turn your idea into an MVP", description: "You have a vision but need a working product to show investors. We build your MVP fast—UI/UX, frontend, backend, smart contracts—so you can start pitching within weeks, not months.", gradient: "from-blue-500 to-purple-600" },
+    { icon: <Shield className="w-6 h-6" />, title: "Build your blockchain product", description: "Need DeFi protocols, NFT platforms, or Web3 apps? We develop secure, scalable smart contracts and decentralized systems that investors and users can trust.", gradient: "from-green-500 to-blue-600" },
+    { icon: <BrainCircuit className="w-6 h-6" />, title: "Add AI to your product", description: "Want to integrate AI but don't have the expertise? We implement machine learning, NLP, and intelligent automation that makes your product stand out and work smarter.", gradient: "from-purple-500 to-pink-600" },
+    { icon: <Code2 className="w-6 h-6" />, title: "Build your complete product", description: "No technical team? No problem. We handle the entire stack—frontend, backend, databases, APIs—so you get a polished, production-ready product without hiring a single developer.", gradient: "from-orange-500 to-red-600" },
+    { icon: <Smartphone className="w-6 h-6" />, title: "Launch on mobile", description: "Your users are on mobile. We build cross-platform iOS and Android apps that deliver smooth experiences and help you reach more customers faster.", gradient: "from-teal-500 to-green-600" },
+    { icon: <Cloud className="w-6 h-6" />, title: "Scale your infrastructure", description: "Growing fast and need your tech to keep up? We design and deploy cloud infrastructure that handles growth, stays secure, and keeps costs under control.", gradient: "from-indigo-500 to-purple-600" },
   ];
 
   const steps = [
-    { num: "01", title: "Discovery & Planning", desc: "We start by understanding your vision, requirements, and goals to create a comprehensive project roadmap." },
-    { num: "02", title: "Design & Architecture", desc: "Our team designs the technical architecture and user experience to ensure optimal performance and usability." },
-    { num: "03", title: "Development & Testing", desc: "We build your solution using agile methodologies with continuous testing and quality assurance." },
-    { num: "04", title: "Deployment & Support", desc: "We deploy your solution and provide ongoing support, maintenance, and optimization services." },
+    { num: "01", title: "Understand your vision", desc: "We dig deep into your idea, target market, and funding goals to map out exactly what you need to succeed." },
+    { num: "02", title: "Design for investors and users", desc: "We create UI/UX and architecture that impresses investors while solving real problems for your users." },
+    { num: "03", title: "Build and keep you updated", desc: "We develop your product in sprints, showing you progress every step so you're never in the dark." },
+    { num: "04", title: "Launch and connect you to VCs", desc: "We deploy your product, then introduce you to the investors and ecosystems that can take you to the next level." },
   ];
 
   return (
     <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container text-center py-16">
-        <h1 className="text-4xl md:text-6xl font-bold">Our Services</h1>
-        <p className="mt-4 text-gray-300 max-w-3xl mx-auto">We offer comprehensive development services to help you build the next generation of blockchain and AI‑powered solutions.</p>
+        <h1 className="text-4xl md:text-6xl font-bold">What we'll build for you</h1>
+        <p className="mt-4 text-gray-300 max-w-3xl mx-auto">From your initial idea to a fully-funded product, we handle every technical aspect so you can focus on growing your business.</p>
       </div>
 
       <div className="container pb-16">
@@ -38,8 +38,8 @@ export default function Services() {
 
       <div className="container pb-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold">Our Process</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">We follow a proven methodology to ensure your project is delivered on time, within budget, and exceeds expectations.</p>
+          <h2 className="text-3xl font-bold">How we work with you</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">A clear, proven process that keeps you in the loop and gets your product to market fast.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {steps.map((st, i) => (
@@ -54,24 +54,24 @@ export default function Services() {
 
       <div className="container pb-20">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold">Why Choose Affidex Lab?</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">We combine deep technical expertise with a user‑first approach to deliver solutions that truly make a difference.</p>
+          <h2 className="text-3xl font-bold">Why founders choose us</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">We don't just build products—we open doors to the funding and networks that turn projects into companies.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="text-center">
             <Users className="w-12 h-12 text-[#8b5cf6] mx-auto mb-4" />
-            <div className="text-lg font-semibold mb-2">Expert Team</div>
-            <p className="text-gray-400">Our team combines years of experience in blockchain, AI, and software development.</p>
+            <div className="text-lg font-semibold mb-2">Direct access to VCs</div>
+            <p className="text-gray-400">We connect you to investors actively looking for projects like yours—not just a referral, real introductions.</p>
           </div>
           <div className="text-center">
             <Lightbulb className="w-12 h-12 text-[#8b5cf6] mx-auto mb-4" />
-            <div className="text-lg font-semibold mb-2">Innovation Focus</div>
-            <p className="text-gray-400">We stay at the forefront of technology trends to bring you cutting‑edge solutions.</p>
+            <div className="text-lg font-semibold mb-2">Full technical execution</div>
+            <p className="text-gray-400">From smart contracts to UI design, we build everything so you don't need to hire or manage a dev team.</p>
           </div>
           <div className="text-center">
             <LineChart className="w-12 h-12 text-[#8b5cf6] mx-auto mb-4" />
-            <div className="text-lg font-semibold mb-2">Proven Results</div>
-            <p className="text-gray-400">Our track record speaks for itself with successful projects and satisfied clients.</p>
+            <div className="text-lg font-semibold mb-2">Fast, fundable MVPs</div>
+            <p className="text-gray-400">We build products that impress investors and work for real users—not glorified prototypes.</p>
           </div>
         </div>
       </div>

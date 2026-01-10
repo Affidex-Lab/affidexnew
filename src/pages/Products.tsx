@@ -48,20 +48,20 @@ export default function Products() {
   ];
 
   const past = [
-    { title: "Blockchain Infrastructure", description: "Built scalable blockchain solutions for enterprise clients", icon: <Lock className="w-5 h-5" /> },
-    { title: "AI Integration Services", description: "Developed AI-powered tools for various business applications", icon: <Fingerprint className="w-5 h-5" /> },
-    { title: "Custom Software Solutions", description: "Created tailored software solutions for Web2 and Web3 businesses", icon: <Palette className="w-5 h-5" /> },
+    { title: "Blockchain Infrastructure", description: "Deployed smart contracts, wallets, and DeFi systems for funded Web3 startups", icon: <Lock className="w-5 h-5" /> },
+    { title: "AI Integration Services", description: "Built AI-powered features that helped clients raise seed rounds and scale", icon: <Fingerprint className="w-5 h-5" /> },
+    { title: "Custom Software Solutions", description: "Delivered full-stack products that went from idea to live in under 3 months", icon: <Palette className="w-5 h-5" /> },
   ];
 
   return (
     <div className="bg-[radial-gradient(1000px_600px_at_50%_-200px,rgba(10,37,64,0.35),transparent_60%),linear-gradient(180deg,#0A2540,#001428)] text-white">
       <div className="container text-center py-16">
-        <h1 className="text-4xl md:text-6xl font-bold">Our <span className="text-white">Products</span></h1>
-        <p className="mt-4 text-gray-300 max-w-3xl mx-auto">Discover our innovative MVP products and explore the cutting-edge solutions we've built for the future of blockchain and AI.</p>
+        <h1 className="text-4xl md:text-6xl font-bold">See what <span className="text-white">we've built</span></h1>
+        <p className="mt-4 text-gray-300 max-w-3xl mx-auto">Real products we've launched from scratch. This is the kind of work we'll do for you—from idea to live product.</p>
       </div>
 
       <div className="container pb-16">
-        <h2 className="text-3xl font-bold text-center mb-10">Current MVPs</h2>
+        <h2 className="text-3xl font-bold text-center mb-10">Live projects we've incubated</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {products.map((p, i) => (
             <div key={i} className="rounded-2xl border border-gray-800 bg-gray-900 p-8">
@@ -92,7 +92,7 @@ export default function Products() {
       </div>
 
       <div className="container pb-20">
-        <h2 className="text-3xl font-bold text-center mb-10">Past Projects</h2>
+        <h2 className="text-3xl font-bold text-center mb-10">What we've delivered for clients</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {past.map((x, i) => (
             <div key={i} className="rounded-xl border border-gray-800 bg-gray-900 p-6">
@@ -105,11 +105,11 @@ export default function Products() {
 
       <div className="container pb-24 text-center">
         <Rocket className="mx-auto mb-4 h-10 w-10 text-gray-300" />
-        <h3 className="text-3xl font-bold mb-2">Ready to Build the Future?</h3>
-        <p className="text-gray-300 max-w-2xl mx-auto mb-6">Join us in our mission to create innovative solutions that push the boundaries of blockchain and AI technology.</p>
+        <h3 className="text-3xl font-bold mb-2">Want a product like this?</h3>
+        <p className="text-gray-300 max-w-2xl mx-auto mb-6">We'll build your MVP, help you scale, and connect you to the investors who can fund your growth. Tell us about your project.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" className="rounded-lg bg-gray-700 px-8 py-3 font-semibold">Get In Touch</a>
-          <a href="/about" className="rounded-lg border border-gray-600 px-8 py-3 font-semibold text-gray-300 hover:bg-gray-700 hover:text-white">Learn About Us</a>
+          <a href="/contact" className="rounded-lg bg-gray-700 px-8 py-3 font-semibold">Start your project</a>
+          <a href="/services" className="rounded-lg border border-gray-600 px-8 py-3 font-semibold text-gray-300 hover:bg-gray-700 hover:text-white">See what we build</a>
         </div>
       </div>
     </div>
