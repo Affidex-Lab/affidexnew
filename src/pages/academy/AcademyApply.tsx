@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle2, ArrowRight, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const programmes = [
   "Computer Hardware Repair & Maintenance (NBTE-Approved)",
@@ -69,13 +70,52 @@ export default function AcademyApply() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate submission — integrate EmailJS or backend endpoint here
-    setTimeout(() => {
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
+    const RECIPIENT = import.meta.env.VITE_EMAILJS_RECIPIENT_EMAIL || "affidexacademy@gmail.com";
+
+    const message = `
+NEW ACADEMY APPLICATION
+═══════════════════════
+Full Name:   ${form.fullName}
+Email:       ${form.email}
+Phone:       ${form.phone}
+State:       ${form.state}
+Programme:   ${form.programme}
+
+Motivation:
+${form.motivation}
+
+Heard about us via: ${form.hearAbout || "Not specified"}
+═══════════════════════`;
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.fullName,
+          email: form.email,
+          message,
+          reply_to: form.email,
+          to_email: RECIPIENT,
+        },
+        PUBLIC_KEY
+      );
       setStatus("success");
-    }, 1500);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      // Fallback: open mail client with pre-filled content
+      const subject = encodeURIComponent(`Academy Application — ${form.fullName} (${form.programme})`);
+      const body = encodeURIComponent(message);
+      window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
+      setStatus("success");
+    }
   };
 
   return (
