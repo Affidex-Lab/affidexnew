@@ -1,176 +1,208 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
-import { ArrowRight, Menu, X, ExternalLink, MapPin, Mail, Globe, Phone } from "lucide-react";
-import { FaXTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { ArrowRight, Menu, X, Globe, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { AFFIDEX_LOGO } from "../../assets/logos";
 
-function AcademyNavbar() {
-  const [isOpen, setIsOpen] = useState(false);
+/* ─── Navbar ─────────────────────────────────────────────────────────── */
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
-  const nav = [
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const links = [
     { to: "/academy", label: "Home" },
     { to: "/academy/programmes", label: "Programmes" },
-    { to: "/academy/about", label: "About Us" },
+    { to: "/academy/about", label: "About" },
   ];
   const isActive = (to: string) => to === "/academy" ? pathname === "/academy" : pathname.startsWith(to);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
-      <div className="container flex h-[68px] items-center justify-between">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}
+      style={{ background: scrolled ? "rgba(11,28,46,0.97)" : "#0B1C2E", backdropFilter: "blur(16px)" }}>
+      {/* Top accent line */}
+      <div className="h-[3px]" style={{ background: "linear-gradient(90deg, var(--gold), var(--gold-3), var(--gold))" }}/>
+
+      <div className="container flex h-[70px] items-center justify-between">
         {/* Logo */}
-        <Link to="/academy" className="flex items-center gap-3 group">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden" style={{background:'linear-gradient(135deg,#0D1F35 60%,#1E4976)'}}>
-            <span className="text-[11px] font-black text-white tracking-tight leading-none">AA</span>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" style={{background:'linear-gradient(135deg,#C9973A,#E8B95A)'}}/>
-            <span className="absolute text-[11px] font-black text-white tracking-tight leading-none opacity-0 group-hover:opacity-100 transition-opacity">AA</span>
+        <Link to="/academy" className="flex items-center gap-3 group flex-shrink-0">
+          <div className="relative h-10 w-10 rounded-xl overflow-hidden flex items-center justify-center"
+            style={{ background: "rgba(200,146,42,0.15)", border: "1px solid rgba(200,146,42,0.3)" }}>
+            <img
+              src={AFFIDEX_LOGO}
+              alt="Affidex Academy"
+              className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
+              onError={(e) => {
+                const t = e.currentTarget;
+                t.style.display = "none";
+                const p = t.parentElement;
+                if (p) p.innerHTML = `<span style="color:#C8922A;font-size:10px;font-weight:900;letter-spacing:-0.03em">AA</span>`;
+              }}
+            />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="text-[13px] font-black tracking-[0.1em] uppercase" style={{color:'#0D1F35'}}>Affidex Academy</span>
-            <span className="text-[9px] font-semibold tracking-[0.12em] uppercase" style={{color:'#C9973A'}}>Vocational Education & Training</span>
+            <span className="text-[13px] font-extrabold tracking-[0.08em] uppercase text-white">Affidex Academy</span>
+            <span className="text-[9.5px] font-semibold tracking-[0.14em] uppercase" style={{ color: "var(--gold-2)" }}>
+              Vocational Education & Training
+            </span>
           </div>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 text-sm md:flex">
-          {nav.map(n => (
-            <Link key={n.to} to={n.to}
-              className={`font-medium transition-colors relative pb-0.5 ${isActive(n.to) ? 'text-[#0D1F35]' : 'text-slate-500 hover:text-[#0D1F35]'}`}>
-              {n.label}
-              {isActive(n.to) && <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full" style={{background:'#C9973A'}}/>}
+        <nav className="hidden items-center gap-8 md:flex">
+          {links.map(l => (
+            <Link key={l.to} to={l.to}
+              className={`text-[13.5px] font-semibold tracking-wide transition-colors relative pb-0.5 group ${isActive(l.to) ? "text-white" : "text-slate-400 hover:text-white"}`}>
+              {l.label}
+              <span className={`absolute -bottom-px left-0 h-[2px] rounded-full transition-all duration-300 ${isActive(l.to) ? "w-full" : "w-0 group-hover:w-full"}`}
+                style={{ background: "var(--gold)" }}/>
             </Link>
           ))}
           <a href="https://affidexlab.com" target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-slate-400 hover:text-slate-600 transition-colors font-medium">
-            <ExternalLink size={11}/> Affidex Lab
+            className="flex items-center gap-1.5 text-[12px] font-medium transition-colors"
+            style={{ color: "rgba(255,255,255,0.35)" }}>
+            <Globe size={11}/> Affidex Lab
           </a>
           <Link to="/academy/apply"
-            className="btn-gold inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-md">
+            className="btn-gold inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-[13px]">
             Apply Now <ArrowRight size={14}/>
           </Link>
         </nav>
 
-        <button className="md:hidden p-1.5 rounded-lg hover:bg-slate-100 transition-colors"
-          onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close" : "Open menu"}>
-          {isOpen ? <X size={22}/> : <Menu size={22}/>}
+        <button className="md:hidden p-2 rounded-lg transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}
+          onClick={() => setOpen(!open)}>
+          {open ? <X size={22}/> : <Menu size={22}/>}
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white shadow-lg">
-          <nav className="container flex flex-col gap-1 py-4">
-            {nav.map(n => (
-              <Link key={n.to} to={n.to} onClick={() => setIsOpen(false)}
-                className={`text-sm font-medium py-2.5 px-3 rounded-lg transition-colors ${isActive(n.to) ? 'bg-slate-50 text-[#0D1F35]' : 'text-slate-600 hover:bg-slate-50 hover:text-[#0D1F35]'}`}>
-                {n.label}
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden border-t" style={{ borderColor: "rgba(255,255,255,0.08)", background: "#0B1C2E" }}>
+          <div className="container py-5 flex flex-col gap-1">
+            {links.map(l => (
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
+                className={`flex items-center justify-between text-sm font-semibold px-4 py-3 rounded-xl transition-colors ${isActive(l.to) ? "text-white bg-white/10" : "text-slate-400 hover:text-white hover:bg-white/05"}`}>
+                {l.label} <ChevronRight size={15}/>
               </Link>
             ))}
-            <Link to="/academy/apply" onClick={() => setIsOpen(false)}
-              className="btn-gold mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white">
-              Apply Now — It's Free <ArrowRight size={14}/>
+            <Link to="/academy/apply" onClick={() => setOpen(false)}
+              className="btn-gold mt-3 flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm">
+              Apply Now — Free <ArrowRight size={14}/>
             </Link>
-          </nav>
+          </div>
         </div>
       )}
     </header>
   );
 }
 
-function AcademyFooter() {
+/* ─── Footer ─────────────────────────────────────────────────────────── */
+function Footer() {
   return (
-    <footer style={{background:'#0D1F35'}} className="text-white">
-      {/* Top gold bar */}
-      <div className="h-1" style={{background:'linear-gradient(90deg,#C9973A,#E8B95A,#C9973A)'}}/>
+    <footer style={{ background: "var(--navy)", color: "#fff" }}>
+      <div className="h-[3px]" style={{ background: "linear-gradient(90deg, var(--gold), var(--gold-3), var(--gold))" }}/>
 
-      <div className="container py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{background:'rgba(201,151,58,0.15)',border:'1px solid rgba(201,151,58,0.3)'}}>
-                <span className="text-xs font-black text-white tracking-tight">AA</span>
+      <div className="container py-20">
+        <div className="grid gap-12 lg:grid-cols-[2fr_1fr_1fr_1.4fr]">
+
+          {/* Brand column */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-12 w-12 rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0"
+                style={{ background: "rgba(200,146,42,0.15)", border: "1px solid rgba(200,146,42,0.25)" }}>
+                <img src={AFFIDEX_LOGO} alt="Affidex" className="h-10 w-10 object-contain"
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}/>
               </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-sm font-black tracking-[0.1em] uppercase text-white">Affidex Academy Ltd</span>
-                <span className="text-[9px] font-semibold tracking-[0.12em] uppercase" style={{color:'#C9973A'}}>Vocational Education & Training</span>
+              <div>
+                <div className="text-sm font-extrabold tracking-widest uppercase text-white">Affidex Academy Ltd</div>
+                <div className="text-[9.5px] font-semibold tracking-[0.14em] uppercase" style={{ color: "var(--gold-2)" }}>
+                  Vocational Education & Training
+                </div>
               </div>
             </div>
-            <p className="text-sm leading-relaxed mb-2" style={{color:'#94A3B8'}}>
+            <p className="text-[13.5px] leading-relaxed mb-4" style={{ color: "#7A8FA6" }}>
               Building employability, enterprise, and income pathways for underserved youth, women, and communities across Southern Nigeria through practical, industry-aligned ICT and technology training.
             </p>
-            <p className="text-xs mb-5" style={{color:'#64748B'}}>RC: 9316934 · SMEDAN: SUID-5998-5813-3500-9105</p>
-            <div className="flex items-center gap-3">
-              {[
-                {href:'https://linkedin.com/company/affidexlab', icon:<FaLinkedin size={16}/>},
-                {href:'https://x.com/affidexlab', icon:<FaXTwitter size={16}/>},
-                {href:'#', icon:<FaInstagram size={16}/>},
-                {href:'https://wa.me/2348133985352', icon:<FaWhatsapp size={16}/>},
-              ].map((s,i)=>(
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg transition-all hover:scale-110"
-                  style={{background:'rgba(255,255,255,0.07)',border:'1px solid rgba(255,255,255,0.12)'}}>
-                  <span style={{color:'#94A3B8'}}>{s.icon}</span>
-                </a>
+            <div className="text-xs mb-6" style={{ color: "#4A6080" }}>
+              RC: 9316934 · SMEDAN: SUID-5998-5813-3500-9105
+            </div>
+
+            {/* Affiliation pills */}
+            <div className="flex flex-wrap gap-2">
+              {["CAC Registered","SMEDAN Certified","Microsoft AI Partner","UNESCO-UNEVOC","NYSC SAED","FME TVET"].map((a, i) => (
+                <span key={i} className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
+                  style={{ background: "rgba(200,146,42,0.12)", border: "1px solid rgba(200,146,42,0.22)", color: "var(--gold-2)" }}>
+                  ✓ {a}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Links */}
+          {/* Quick links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.15em] mb-5" style={{color:'#C9973A'}}>Quick Links</h4>
-            <ul className="space-y-2.5 text-sm" style={{color:'#94A3B8'}}>
-              {[
-                {to:'/academy', label:'Home'},
-                {to:'/academy/programmes', label:'Our Programmes'},
-                {to:'/academy/about', label:'About Us'},
-                {to:'/academy/apply', label:'Apply Now'},
-              ].map((l,i)=>(
-                <li key={i}><Link to={l.to} className="hover:text-white transition-colors">{l.label}</Link></li>
+            <h4 className="label mb-6">Navigation</h4>
+            <ul className="space-y-3 text-[13.5px]" style={{ color: "#7A8FA6" }}>
+              {[["Home", "/academy"], ["Programmes", "/academy/programmes"], ["About Us", "/academy/about"], ["Apply Now", "/academy/apply"]].map(([l, t]) => (
+                <li key={t}><Link to={t} className="hover:text-white transition-colors">{l}</Link></li>
               ))}
-              <li><a href="https://affidexlab.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">Affidex Lab <ExternalLink size={11}/></a></li>
+              <li><a href="https://affidexlab.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1"><Globe size={11}/> Affidex Lab</a></li>
+            </ul>
+          </div>
+
+          {/* Programmes */}
+          <div>
+            <h4 className="label mb-6">Our Tracks</h4>
+            <ul className="space-y-3 text-[13px]" style={{ color: "#7A8FA6" }}>
+              {["Digital Foundations","Web & Coding","Digital Marketing","UI/UX Design","Data & AI","ICT Support & Hardware"].map((t, i) => (
+                <li key={i} className="hover:text-white transition-colors cursor-default">{t}</li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.15em] mb-5" style={{color:'#C9973A'}}>Contact Us</h4>
-            <ul className="space-y-4 text-sm" style={{color:'#94A3B8'}}>
-              <li className="flex items-start gap-2.5">
-                <Mail size={13} className="mt-0.5 shrink-0" style={{color:'#C9973A'}}/>
-                <div className="space-y-0.5">
+            <h4 className="label mb-6">Contact Us</h4>
+            <ul className="space-y-4 text-[13.5px]" style={{ color: "#7A8FA6" }}>
+              <li className="flex items-start gap-3">
+                <Mail size={14} className="mt-0.5 flex-shrink-0" style={{ color: "var(--gold)" }}/>
+                <div>
                   <a href="mailto:academy@affidexlab.com" className="hover:text-white transition-colors block">academy@affidexlab.com</a>
                   <a href="mailto:affidexacademy@gmail.com" className="hover:text-white transition-colors block">affidexacademy@gmail.com</a>
                 </div>
               </li>
-              <li className="flex items-start gap-2.5">
-                <Phone size={13} className="mt-0.5 shrink-0" style={{color:'#C9973A'}}/>
+              <li className="flex items-center gap-3">
+                <Phone size={14} className="flex-shrink-0" style={{ color: "var(--gold)" }}/>
                 <a href="tel:+2348133985352" className="hover:text-white transition-colors">+234 813 398 5352</a>
               </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin size={13} className="mt-0.5 shrink-0" style={{color:'#C9973A'}}/>
-                <span>ChainSpace Hub, Uyo · Udo Udoma Ave, Uyo<br/>Akwa Ibom · Cross River · Abia · Lagos</span>
+              <li className="flex items-start gap-3">
+                <MapPin size={14} className="mt-0.5 flex-shrink-0" style={{ color: "var(--gold)" }}/>
+                <div>
+                  <p>Two training centres in Uyo</p>
+                  <p className="text-[12px] mt-0.5" style={{ color: "#4A6080" }}>Akwa Ibom State, Nigeria</p>
+                </div>
               </li>
-              <li className="flex items-start gap-2.5">
-                <Globe size={13} className="mt-0.5 shrink-0" style={{color:'#C9973A'}}/>
-                <a href="https://www.affidexlab.com/academy" className="hover:text-white transition-colors">www.affidexlab.com/academy</a>
+              <li className="flex items-center gap-3">
+                <Globe size={14} className="flex-shrink-0" style={{ color: "var(--gold)" }}/>
+                <a href="https://affidexlab.com/academy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  affidexlab.com/academy
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Affiliations strip */}
-        <div className="mt-12 pt-8 border-t" style={{borderColor:'rgba(255,255,255,0.07)'}}>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] mb-4 text-center" style={{color:'#C9973A'}}>Confirmed Affiliations & Registrations</p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs" style={{color:'#64748B'}}>
-            {['CAC RC-9316934','SMEDAN Certified','Microsoft AI Cloud Partner','UNESCO-UNEVOC','NYSC SAED Partner','FME TVET Approved','IPPNL Partner','3MTT Applicant'].map((a,i)=>(
-              <span key={i} className="px-3 py-1.5 rounded-full" style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.1)'}}>
-                ✓ {a}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between pt-6 border-t" style={{borderColor:'rgba(255,255,255,0.07)'}}>
-          <p className="text-xs" style={{color:'#475569'}}>© {new Date().getFullYear()} Affidex Academy Ltd. A division of Affidex Lab. All rights reserved.</p>
-          <div className="flex gap-4 text-xs" style={{color:'#475569'}}>
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+          <p className="text-xs" style={{ color: "#3D5068" }}>
+            © {new Date().getFullYear()} Affidex Academy Limited. A division of Affidex Lab. All rights reserved.
+          </p>
+          <div className="flex gap-5 text-xs" style={{ color: "#3D5068" }}>
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
@@ -183,9 +215,9 @@ function AcademyFooter() {
 export default function AcademyLayout() {
   return (
     <div className="flex min-h-screen flex-col">
-      <AcademyNavbar/>
-      <main className="flex-1"><Outlet/></main>
-      <AcademyFooter/>
+      <Navbar />
+      <main className="flex-1"><Outlet /></main>
+      <Footer />
     </div>
   );
 }
