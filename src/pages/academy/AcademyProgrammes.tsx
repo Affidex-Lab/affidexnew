@@ -15,7 +15,7 @@ const programmes = [
     level: "Beginner",
     cert: "NBTE Certificate of Competency",
     description:
-      "Nigeria's most in-demand technical vocational skill. This NBTE-accredited programme covers computer assembly, fault diagnosis, component repair, and system maintenance. It is fully aligned with the Nigerian Skills Qualifications Framework (NSQF) and qualifies Affidex Academy for reimbursement under the World Bank IDEAS Project (₦300,000 per trained youth).",
+      "Nigeria's most in-demand technical vocational skill. This NBTE-accredited programme covers computer assembly, fault diagnosis, component repair, and system maintenance.",
     outcomes: [
       "Assemble and disassemble desktops and laptops",
       "Diagnose and repair hardware faults",
