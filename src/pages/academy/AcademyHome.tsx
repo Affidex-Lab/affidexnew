@@ -313,14 +313,7 @@ export default function AcademyHome() {
             </p>
 
             {/* Credential pills */}
-            <div className="anim-fadeup delay-300 flex flex-wrap gap-2 mb-10">
-              {["🔷 Microsoft AI Cloud Partner","🌐 UNESCO-UNEVOC","🇳🇬 NYSC SAED Partner","📋 SMEDAN Certified","🏛️ FME TVET Approved"].map((b,i)=>(
-                <span key={i} className="text-[11px] font-semibold px-3 py-1.5 rounded-full"
-                  style={{ background:"rgba(255,255,255,0.07)", border:"1px solid rgba(255,255,255,0.14)", color:"rgba(255,255,255,0.75)" }}>
-                  {b}
-                </span>
-              ))}
-            </div>
+            
 
             {/* CTAs */}
             <div className="anim-fadeup delay-450 flex flex-col sm:flex-row gap-4">
