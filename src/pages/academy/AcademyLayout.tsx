@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+\import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { ArrowRight, Menu, X, Globe, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import { AFFIDEX_LOGO } from "../../assets/logos";
@@ -32,7 +32,7 @@ function Navbar() {
         {/* Logo */}
         <Link to="/academy" className="flex items-center gap-3 group flex-shrink-0">
           <div className="relative h-10 w-10 rounded-xl overflow-hidden flex items-center justify-center"
-            style={{ background: "rgba(200,146,42,0.15)", border: "1px solid rgba(200,146,42,0.3)" }}>
+            style={{ background: "#0B1C2E", border: "1px solid rgba(200,146,42,0.4)" }}>
             <img
               src={AFFIDEX_LOGO}
               alt="Affidex Academy"
@@ -114,7 +114,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-12 w-12 rounded-xl overflow-hidden flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(200,146,42,0.15)", border: "1px solid rgba(200,146,42,0.25)" }}>
+                style={{ background: "#060F1A", border: "1px solid rgba(200,146,42,0.3)" }}>
                 <img src={AFFIDEX_LOGO} alt="Affidex" className="h-10 w-10 object-contain"
                   onError={(e) => { e.currentTarget.style.display = "none"; }}/>
               </div>
