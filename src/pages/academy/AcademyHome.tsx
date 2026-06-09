@@ -270,7 +270,7 @@ export default function AcademyHome() {
 
       {/* ═══════════════ HERO ════════════════════════════════════════ */}
       <section className="relative overflow-hidden noise-overlay"
-        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"100dvh", display:"flex", alignItems:"flex-start", paddingTop:"0" }}>
+        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"100dvh", display:"flex", alignItems:"center" }}>
 
         {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none">
@@ -288,7 +288,7 @@ export default function AcademyHome() {
           <div className="absolute top-32 right-32 opacity-5" style={{ width:"200px",height:"200px",border:"1px solid var(--gold)",borderRadius:"50%" }}/>
         </div>
 
-        <div className="container relative z-10 text-white" style={{paddingTop:"7rem",paddingBottom:"6rem"}}>
+        <div className="container relative z-10 text-white" style={{paddingTop:"clamp(5.5rem,10vw,8rem)",paddingBottom:"clamp(4rem,8vw,7rem)"}}>
           <div className="max-w-[740px]">
             {/* Pill badge */}
             <div className="anim-fadeup mb-6 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em]"
@@ -307,8 +307,8 @@ export default function AcademyHome() {
             </h1>
 
             {/* Sub */}
-            <p className="anim-fadeup delay-200 leading-relaxed mb-8 max-w-[580px]" style={{fontSize:"clamp(14px,4vw,17px)"}}
-              style={{ color:"rgba(255,255,255,0.65)" }}>
+            <p className="anim-fadeup delay-200 leading-relaxed max-w-[580px]"
+              style={{ fontSize:"clamp(14px,4vw,17px)", color:"rgba(255,255,255,0.65)", marginBottom:"2.5rem" }}>
               A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution delivering 6 practical digital skills tracks — right here in Uyo, Akwa Ibom.
             </p>
 
@@ -316,7 +316,7 @@ export default function AcademyHome() {
             
 
             {/* CTAs */}
-            <div className="anim-fadeup delay-450 flex flex-col sm:flex-row gap-3">
+            <div className="anim-fadeup delay-450 flex flex-col sm:flex-row gap-3" style={{marginTop:"2.5rem"}}>
               <Link to="/academy/apply"
                 className="btn-gold inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
                 Apply Now — It's Free <ArrowRight size={17}/>
