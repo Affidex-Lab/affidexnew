@@ -270,7 +270,7 @@ export default function AcademyHome() {
 
       {/* ═══════════════ HERO ════════════════════════════════════════ */}
       <section className="relative overflow-hidden noise-overlay"
-        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"100svh", display:"flex", alignItems:"center" }}>
+        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"100dvh", display:"flex", alignItems:"flex-start", paddingTop:"0" }}>
 
         {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none">
@@ -288,18 +288,18 @@ export default function AcademyHome() {
           <div className="absolute top-32 right-32 opacity-5" style={{ width:"200px",height:"200px",border:"1px solid var(--gold)",borderRadius:"50%" }}/>
         </div>
 
-        <div className="container relative z-10 text-white" style={{paddingTop:"clamp(5rem,12vh,9rem)",paddingBottom:"clamp(5rem,12vh,9rem)"}}>
+        <div className="container relative z-10 text-white" style={{paddingTop:"7rem",paddingBottom:"6rem"}}>
           <div className="max-w-[740px]">
             {/* Pill badge */}
-            <div className="anim-fadeup mb-10 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em]"
-              style={{ background:"rgba(200,146,42,0.15)", border:"1px solid rgba(200,146,42,0.4)", marginTop:"2px" }}>
+            <div className="anim-fadeup mb-6 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em]"
+              style={{ background:"rgba(200,146,42,0.15)", border:"1px solid rgba(200,146,42,0.4)" }}>
               <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background:"var(--gold)" }}/>
               2026 Cohort — Applications Open Now
             </div>
 
             {/* Headline */}
-            <h1 className="anim-fadeup delay-100 font-black leading-[1.08] mb-6"
-              style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:"clamp(3rem,6.5vw,5.2rem)", fontWeight:700 }}>
+            <h1 className="anim-fadeup delay-100 font-black leading-[1.1] mb-5"
+              style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:"clamp(2.4rem,6.5vw,5.2rem)", fontWeight:700 }}>
               World-Class Skills Training.{" "}
               <span className="italic" style={{ color:"var(--gold-2)" }}>
                 Built for&nbsp;Southern&nbsp;Nigeria.
@@ -307,7 +307,7 @@ export default function AcademyHome() {
             </h1>
 
             {/* Sub */}
-            <p className="anim-fadeup delay-200 text-[17px] leading-relaxed mb-10 max-w-[580px]"
+            <p className="anim-fadeup delay-200 leading-relaxed mb-8 max-w-[580px]" style={{fontSize:"clamp(14px,4vw,17px)"}}
               style={{ color:"rgba(255,255,255,0.65)" }}>
               A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution delivering 6 practical digital skills tracks — right here in Uyo, Akwa Ibom.
             </p>
@@ -316,21 +316,18 @@ export default function AcademyHome() {
             
 
             {/* CTAs */}
-            <div className="anim-fadeup delay-450 flex flex-col sm:flex-row gap-4">
+            <div className="anim-fadeup delay-450 flex flex-col sm:flex-row gap-3">
               <Link to="/academy/apply"
-                className="btn-gold inline-flex items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
+                className="btn-gold inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
                 Apply Now — It's Free <ArrowRight size={17}/>
               </Link>
               <Link to="/academy/programmes"
-                className="btn-ghost inline-flex items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
+                className="btn-ghost inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full px-9 py-4 text-[15px]">
                 Explore Programmes
               </Link>
             </div>
 
-            {/* Trust line */}
-            <p className="anim-fadeup delay-600 mt-9 text-[12px]" style={{ color:"rgba(255,255,255,0.28)" }}>
-              CAC Registered · RC 9316934 · SMEDAN Certified · Two operational centres in Uyo
-            </p>
+
           </div>
         </div>
 
