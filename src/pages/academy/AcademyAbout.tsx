@@ -14,22 +14,6 @@ const values = [
   { icon:<BookOpen size={22}/>, title:"Lifelong Learning", body:"Alumni networks, post-graduation business continuity support, and enterprise mentorship — the journey doesn't end at demo day." },
 ];
 
-const milestones = [
-  { date:"12 Feb 2026", event:"Affidex Academy Ltd incorporated — CAC RC: 9316934", done:true },
-  { date:"Mar 2026",    event:"Microsoft AI Cloud Partner status verified", done:true },
-  { date:"Mar 2026",    event:"UNESCO-UNEVOC active participation confirmed — 167-country TVET network", done:true },
-  { date:"19 Mar 2026", event:"SMEDAN certification — SUID-5998-5813-3500-9105 — enrolled across 6 programmes", done:true },
-  { date:"Mar 2026",    event:"NYSC SAED Registered Training Partner status secured", done:true },
-  { date:"Mar 2026",    event:"FME TVET initial approval received — NBTE site visit scheduled", done:true },
-  { date:"Mar 2026",    event:"Second training centre — IPPN Uyo — established at central Uyo location", done:true },
-  { date:"Apr 2026",    event:"KBS ICSS-TFC Certification & BDSP Accreditation submitted", done:true },
-  { date:"May 2026",    event:"NiYA Partnership Proposal submitted to Federal Ministry of Youth Development", done:true },
-  { date:"Q3 2026",     event:"3MTT Programme — Training Provider commencement confirmed", done:false },
-  { date:"Q3 2026",     event:"NBTE full accreditation visit and certification", done:false },
-  { date:"Q4 2026",     event:"First cohort graduation — both Uyo centres", done:false },
-  { date:"2027",        event:"Cross River State campus expansion — Calabar", done:false },
-  { date:"2027",        event:"Abia State campus — Aba/Umuahia (women entrepreneurship focus)", done:false },
-];
 
 const regs = [
   { cat:"Corporate Registration", items:["CAC RC: 9316934 — incorporated 12 February 2026","Private Limited Liability Company (Ltd)","Tax Identification Number (TIN)","SMEDAN MSME Certificate: SUID-5998-5813-3500-9105"] },
@@ -137,30 +121,6 @@ export default function AcademyAbout() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ TIMELINE ════════════════════════════════════════════════ */}
-      <section className="py-24" style={{background:"var(--cream)",borderBottom:"1px solid var(--border)"}}>
-        <div className="container">
-          <div className="label mb-5">Our Journey</div>
-          <h2 className="mb-16 max-w-lg" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(2rem,3.5vw,3rem)",fontWeight:700,lineHeight:1.15,color:"var(--navy)"}}>
-            Where we've been.<br/><span className="italic" style={{color:"var(--gold)"}}>Where we're going.</span>
-          </h2>
-          <div className="max-w-[680px] space-y-3">
-            {milestones.map((m,i)=>(
-              <div key={i} className="flex items-start gap-5">
-                <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xs font-black ${m.done?"text-white":"text-white opacity-40"}`}
-                  style={{background:m.done?"var(--navy)":"var(--text-light)"}}>
-                  {m.done ? "✓" : "→"}
-                </div>
-                <div className={`flex-1 rounded-xl border px-6 py-4 ${m.done?"bg-white":"bg-white/50"}`} style={{borderColor:"var(--border)"}}>
-                  <div className="text-[11.5px] font-bold mb-1" style={{color:"var(--gold)"}}>{m.date}</div>
-                  <p className="text-[13.5px] font-medium" style={{color:m.done?"var(--navy)":"var(--text-light)"}}>{m.event}</p>
-                </div>
               </div>
             ))}
           </div>
