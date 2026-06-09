@@ -1,4 +1,4 @@
-\import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { ArrowRight, Menu, X, Globe, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import { AFFIDEX_LOGO } from "../../assets/logos";
