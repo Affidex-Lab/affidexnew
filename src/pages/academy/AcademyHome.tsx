@@ -270,7 +270,7 @@ export default function AcademyHome() {
 
       {/* ═══════════════ HERO ════════════════════════════════════════ */}
       <section className="relative overflow-hidden noise-overlay"
-        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"92vh", display:"flex", alignItems:"center" }}>
+        style={{ background:"linear-gradient(150deg,#060F1A 0%,#0B1C2E 40%,#102236 70%,#0D1E30 100%)", minHeight:"100svh", display:"flex", alignItems:"center" }}>
 
         {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none">
@@ -288,11 +288,11 @@ export default function AcademyHome() {
           <div className="absolute top-32 right-32 opacity-5" style={{ width:"200px",height:"200px",border:"1px solid var(--gold)",borderRadius:"50%" }}/>
         </div>
 
-        <div className="container relative z-10 py-32 text-white">
+        <div className="container relative z-10 text-white" style={{paddingTop:"clamp(5rem,12vh,9rem)",paddingBottom:"clamp(5rem,12vh,9rem)"}}>
           <div className="max-w-[740px]">
             {/* Pill badge */}
-            <div className="anim-fadeup mb-8 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em]"
-              style={{ background:"rgba(200,146,42,0.15)", border:"1px solid rgba(200,146,42,0.4)" }}>
+            <div className="anim-fadeup mb-10 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em]"
+              style={{ background:"rgba(200,146,42,0.15)", border:"1px solid rgba(200,146,42,0.4)", marginTop:"2px" }}>
               <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background:"var(--gold)" }}/>
               2026 Cohort — Applications Open Now
             </div>
@@ -307,7 +307,7 @@ export default function AcademyHome() {
             </h1>
 
             {/* Sub */}
-            <p className="anim-fadeup delay-200 text-[17px] leading-relaxed mb-8 max-w-[580px]"
+            <p className="anim-fadeup delay-200 text-[17px] leading-relaxed mb-10 max-w-[580px]"
               style={{ color:"rgba(255,255,255,0.65)" }}>
               A Microsoft-affiliated, UNESCO-UNEVOC recognised, and federally-registered vocational institution delivering 6 practical digital skills tracks — right here in Uyo, Akwa Ibom.
             </p>
@@ -328,7 +328,7 @@ export default function AcademyHome() {
             </div>
 
             {/* Trust line */}
-            <p className="anim-fadeup delay-600 mt-7 text-[12px]" style={{ color:"rgba(255,255,255,0.28)" }}>
+            <p className="anim-fadeup delay-600 mt-9 text-[12px]" style={{ color:"rgba(255,255,255,0.28)" }}>
               CAC Registered · RC 9316934 · SMEDAN Certified · Two operational centres in Uyo
             </p>
           </div>
@@ -343,7 +343,7 @@ export default function AcademyHome() {
 
       {/* ═══════════════ STATS ═══════════════════════════════════════ */}
       <section style={{ background:"var(--navy)", borderBottom:"1px solid rgba(255,255,255,0.07)" }}>
-        <div className="container py-12">
+        <div className="container py-14">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background:"rgba(255,255,255,0.07)" }}>
             {stats.map((s,i)=>(
               <div key={i} className="text-center px-8 py-10" style={{ background:"var(--navy)" }}>
