@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, BookOpen, Star, MapPin, Zap, Shield, Target, BarChart3, Wifi, Users, TrendingUp, Layers, Code2, Monitor, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { CEO_PHOTO } from "../../assets/logos";
+import { GLORY_PHOTO, EDIDIONG_PHOTO, EDIKAN_PHOTO } from "../../assets/team_photos";
 import { useState, useEffect, useRef } from "react";
 
 
@@ -12,24 +13,23 @@ const team = [
     tag: "Founder",
   },
   {
-    photo: null,
-    initials: "EES",
-    name: "Edidiong Emmanuel Samuel",
-    role: "MD / Director of Academics",
+    photo: EDIDIONG_PHOTO,
+    name: "Mr. Edidiong Samuel",
+    role: "Managing Director / Head, Training and Curriculum Development",
     tag: "Co-Founder",
   },
   {
-    photo: null,
-    initials: "OG",
-    name: "Ogoluwa",
-    role: "Director of Operations",
-    tag: "Operations",
+    photo: GLORY_PHOTO,
+    initials: "GS",
+    name: "Barr. Glory Samuel",
+    role: "Company Legal Representative",
+    tag: "Legal",
   },
   {
-    photo: null,
-    initials: "BD",
-    name: "Partnerships Lead",
-    role: "Business Development",
+    photo: EDIKAN_PHOTO,
+    initials: "EM",
+    name: "Mr. Edikan Michael",
+    role: "Head, Partnerships and Business Development",
     tag: "BD & Partnerships",
   },
 ];
