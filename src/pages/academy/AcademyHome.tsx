@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, BookOpen, Star, MapPin, Zap, Shield, Target, BarChart3, Wifi, Users, TrendingUp, Layers, Code2, Monitor, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { CEO_PHOTO } from "../../assets/logos";
 import { GLORY_PHOTO, EDIDIONG_PHOTO, EDIKAN_PHOTO } from "../../assets/team_photos";
+import SEO from "../../components/SEO";
 import { useState, useEffect, useRef } from "react";
 
 
@@ -267,6 +268,11 @@ function TeamSlider() {
 export default function AcademyHome() {
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <SEO
+        title="Affidex Academy — Vocational & Professional Training in Uyo"
+        description="Affidex Academy delivers hands-on vocational and professional training in Uyo, Nigeria — from computer hardware repair to fullstack web development. Internationally affiliated, NBTE-approved programmes."
+        path="/academy"
+      />
 
       {/* ═══════════════ HERO ════════════════════════════════════════ */}
       <section className="relative overflow-hidden noise-overlay"
