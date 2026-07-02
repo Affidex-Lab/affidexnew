@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, BookOpen, CheckCircle2, Award, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import SEO from "../../components/SEO";
 
 const programmes = [
   {
@@ -247,6 +248,11 @@ function ProgrammeCard({ p }: { p: (typeof programmes)[0] }) {
 export default function AcademyProgrammes() {
   return (
     <div>
+      <SEO
+        title="Programmes — Affidex Academy"
+        description="Explore Affidex Academy's NBTE-approved training programmes in Uyo, including Computer Hardware Repair & Maintenance, Fullstack Web Development, and Frontend Web Development."
+        path="/academy/programmes"
+      />
       {/* Hero */}
       <section className="bg-[#0A2540] py-20">
         <div className="container text-center text-white">
