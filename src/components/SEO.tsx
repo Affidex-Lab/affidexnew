@@ -6,6 +6,8 @@ interface SEOProps {
   /** Path after the domain, e.g. "/academy" or "/academy/about" */
   path?: string;
   image?: string;
+  /** Set true on error/utility pages (e.g. 404) so they aren't indexed */
+  noindex?: boolean;
 }
 
 function setMetaTag(attr: "name" | "property", key: string, content: string) {
@@ -22,13 +24,14 @@ function setMetaTag(attr: "name" | "property", key: string, content: string) {
  * Sets the document title and meta/OG/Twitter tags for the current route.
  * Mount this once near the top of each page component.
  */
-export default function SEO({ title, description, path = "", image = "/logo.png" }: SEOProps) {
+export default function SEO({ title, description, path = "", image = "/logo.png", noindex = false }: SEOProps) {
   useEffect(() => {
     const fullUrl = `https://affidexlab.com${path}`;
 
     document.title = title;
 
     setMetaTag("name", "description", description);
+    setMetaTag("name", "robots", noindex ? "noindex, follow" : "index, follow");
 
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", description);
