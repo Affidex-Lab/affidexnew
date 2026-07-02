@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle2, ArrowRight, Mail } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import SEO from "../../components/SEO";
 
 const programmes = [
   "Computer Hardware Repair & Maintenance (NBTE-Approved)",
@@ -120,6 +121,11 @@ Heard about us via: ${form.hearAbout || "Not specified"}
 
   return (
     <div>
+      <SEO
+        title="Apply Now — Affidex Academy"
+        description="Apply to Affidex Academy's vocational and professional training programmes in Uyo, Nigeria. Start your application today."
+        path="/academy/apply"
+      />
       {/* Hero */}
       <section className="bg-[#0A2540] py-20">
         <div className="container text-center text-white">
